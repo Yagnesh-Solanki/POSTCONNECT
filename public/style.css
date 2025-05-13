@@ -1,0 +1,88 @@
+
+
+h1 {
+    color : maroon;
+}
+
+.post {
+    background-color: blanchedalmond;
+}
+
+.user {
+    font-style: italic;
+}
+
+/* In public/styles.css */
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* Navbar fixes */
+.navbar {
+    padding: 15px 30px; /* Adjust navbar padding */
+}
+
+.navbar .logo {
+    /* width: 40px; Logo size */
+    height: 60px;
+}
+
+.navbar .brand-name {
+    font-size: 1.5rem; /* Font size for brand name */
+    font-weight: bold; /* Make brand name bold */
+}
+
+/* Button styles */
+.btn-success {
+    font-size: 16px; /* Adjust button font size */
+    padding: 10px 20px; /* Adjust padding for the button */
+}
+
+.btn-success:hover {
+    background-color: #218838; /* Darker green on hover */
+    border-color: #1e7e34;
+}
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 55px;
+    width: 54px;
+    margin-right: -10px;
+    margin-left: 5px;
+}
+  
+  .brand-name {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+  }
+  
+
+

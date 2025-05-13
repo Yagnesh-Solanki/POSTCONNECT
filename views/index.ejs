@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Posts</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+    
+
+  <div class="container mt-5">
+    <!-- Navbar with logo and Create Post button -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4 sticky-top">
+      <div class="container-fluid">
+        <!-- Logo and brand name -->
+        <div class="d-flex align-items-center">
+          <img src="image.png" alt="PostConnect Logo" class="logo w-30 h-20" />
+          <span class="brand-name ml-2">PostConnect</span>
+        </div>
+        <!-- Create New Post button -->
+        <div class="ms-auto">
+          <a href="http://localhost:8080/posts/new" class="btn btn-success btn-lg px-4 py-2">Create New Post</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Loop through posts -->
+    <% for(post of posts) { %>
+      <div class="card mb-4 shadow-sm" style="max-width: 800px; margin: auto;">
+        <% if (post.imageUrl) { %>
+            <img src="<%= post.imageUrl %>" class="card-img-top img-fluid rounded" style="max-height: 400px; object-fit: cover;" alt="Post Image" />
+        <% } %>
+          
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">@<%= post.username %></h6>
+          <p class="card-text"><%= post.content %></p>
+
+          <div class="d-flex justify-content-between">
+            <div>
+              <a href="http://localhost:8080/posts/<%= post.id %>" class="btn btn-outline-primary btn-sm">See in detail</a>
+              <a href="http://localhost:8080/posts/<%= post.id %>/edit" class="btn btn-outline-secondary btn-sm">Edit</a>
+            </div>
+            <form action="/posts/<%= post.id %>?_method=DELETE" method="POST" class="d-inline">
+              <button class="btn btn-danger btn-sm">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
