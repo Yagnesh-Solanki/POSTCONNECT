@@ -57,7 +57,7 @@ Start the development server:
 node index.js
 ```
 
-Visit `http://localhost:3000` in your browser.
+Visit `http://localhost:8080` in your browser.
 
 ---
 
